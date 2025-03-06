@@ -4,10 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 class CollectTest extends TestCase
 {
-    public function testCount()
+    public function testKeys()
     {
-        $collect = new Collect\Collect([13,17]);
-        $this->assertSame(2, $collect->count());
+        $collect = new Collect\Collect(['a' => 1, 'b' => 2, 'c' => 3]);
+        $keys = $collect->keys();
+        $this->assertSame(['a', 'b', 'c'], $keys->toArray());
     }
+
 
 }
